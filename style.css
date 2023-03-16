@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom, #e4a7db, #d245db, #a22dce, #7d3ac5, #4d56bd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.calculator {
+    height: 60vh;
+    min-width: 370px;
+    max-width: 370px;
+}
+
+.display {
+    width: 100%;
+    min-height: 20%;
+    max-height: min-content;
+    background-color: rgba(29, 27, 27, 0.151);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    color: white;
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 5px;
+    font-weight: bold;
+}
+/* Previous number changing color */
+.previousNumber {
+    color: rgba(182, 182, 182,);
+    font-size: 20px;
+}
+/* making bigger mathSign */
+.mathSign {
+    font-size: 22px;
+}
+
+/* making bigger inscribed number */
+.currentNumber {
+    font-size: 35px;
+}
+
+/* display panel by grid */ 
+.panel{
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 2px;
+}
+
+/* styling buttons in panel */ 
+.panel button {
+    font-size: 23px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.46);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.56);
+}
+
+/* making equal on two squares */
+.equals {
+    grid-row: -3/-1;
+    grid-column: -2/-1;
+}
+
+/* making style calculator history */
+
+.calculator-history {
+    height: 60vh;
+    margin: 20px;
+    width: 150px;
+    background-color: rgba(20, 27, 27, 0.151);
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* styling previous results */
+.history {
+    list-style: none;
+}
+
+.history-title {
+    padding-bottom: 10px;
+}
+
+.history-btn {
+    border: none;
+    color: white;
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 20px;
+    background: rgba(29, 27, 27, 0.651);
+    margin: 5px auto;
+    cursor: pointer;
+    font-weight: bold;
+    display: none;
+    outline: none;
+}
+
+/* showing history btn on class active if there is some history of previous results */
+
+.history-btn.active {
+    display: block;    
+}
+
+/* styling li's from history */
+
+.history-item {
+    letter-spacing: 1px;
+    margin: 8px 0px;
+    border-bottom: 1px solid rgba(29, 27, 27, 0.233);
+    padding-bottom: 5px;
+}
